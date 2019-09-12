@@ -3,8 +3,8 @@ package com.example.demoweb.model;
 import java.util.Date;
 
 public class Post {
-    String text;
-    Integer likes;
+    private String text;
+    private Integer likes;
     private Date creationDate;
 
     public Date getCreationDate() {

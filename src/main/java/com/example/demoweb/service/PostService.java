@@ -3,16 +3,27 @@ package com.example.demoweb.service;
 import com.example.demoweb.model.Post;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class PostService {
 
-    public Post[] listAllPosts() {
-        return new Post[]{
-                new Post("Навальный снова сел", new Date()),
-                new Post("Сентябрь горит", new Date()),
-                new Post("Студентам объявили амнистию", new Date())
-        };
+    static List<Post> posts = new ArrayList<>();
+
+    public PostService(){
+        create("Навальный снова сел");
+        create("Wut have u done");
+        create("Walking Dead");
     }
+
+    public List<Post> listAllPosts() {
+        return posts;
+    }
+
+    public void create(String text) {
+        posts.add(new Post(text, new Date()));
+    }
+
 }
