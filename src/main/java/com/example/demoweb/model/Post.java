@@ -6,7 +6,7 @@ public class Post {
     private String text;
     private Integer likes;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -41,7 +41,7 @@ public class Post {
         return likes;
     }
 
-    public Post(long id, String text, Date date) {
+    public Post(Long id, String text, Date date) {
         this.id = id;
         this.text = text;
         this.likes = 0;
