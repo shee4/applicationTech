@@ -37,14 +37,7 @@ public class Post {
         return text;
     }
 
-    public Integer getLikes() {
+    public int getLikes() {
         return likes;
-    }
-
-    public Post(Long id, String text, Date date) {
-        this.id = id;
-        this.text = text;
-        this.likes = 0;
-        this.creationDate = date;
     }
 }
