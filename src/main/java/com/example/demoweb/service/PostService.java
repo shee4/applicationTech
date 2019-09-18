@@ -23,7 +23,7 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post(posts.size()+1, text, new Date()));
     }
 
 }
