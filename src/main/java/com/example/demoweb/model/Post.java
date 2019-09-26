@@ -10,27 +10,16 @@ public class Post {
         return id;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
     public void setLikes(Integer likes) {
         this.likes = likes;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    private Date creationDate;
-    private long id;
-
     public Date getCreationDate() {
         return creationDate;
+    }
+
+    public String getFormattedDate(){
+        return new SimpleDateFormat("EEE, MMM d, ''yy").format(creationDate);
     }
 
     public String getText() {

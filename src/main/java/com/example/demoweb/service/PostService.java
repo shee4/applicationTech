@@ -5,14 +5,11 @@ import com.example.demoweb.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class PostService {
 
-    static List<Post> posts = new ArrayList<>();
     @Autowired
     PostRepository postRepository;
 
@@ -21,7 +18,13 @@ public class PostService {
     }
 
     public void create(String text) {
-        Post post = new Post(null, text, new Date());
+        long possibleid = postRepository.count();
+
+        do{
+            possibleid++;
+        }while (postRepository.existsById(possibleid));
+
+        Post post = new Post(possibleid, text, new Date());
         postRepository.save(post);
     }
 
